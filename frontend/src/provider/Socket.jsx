@@ -13,7 +13,7 @@ export const SocketProvider = (props) => {
     // (Ensure the key string matches whatever you used in your login component, e.g., 'token' or 'jwt')
     const token = localStorage.getItem("token"); 
 
-    return io("http://localhost:4444", {
+    return io(`${import.meta.env.VITE_API_URL}`, {
       auth: {
         token: token // 2. Send the token inside the auth payload
       }

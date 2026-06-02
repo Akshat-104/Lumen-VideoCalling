@@ -30,7 +30,7 @@ export default function Login() {
     e.preventDefault();
     setError(""); setLoading(true);
     try { 
-      const res = await fetch("http://localhost:4444/api/login", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
